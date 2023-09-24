@@ -3,6 +3,8 @@ package com.comrade.domain.entity;
 import com.comrade.domain.valueobject.Money;
 import com.comrade.domain.valueobject.ProductId;
 
+import java.util.UUID;
+
 public class Product extends BaseEntity<ProductId> {
 
     private String name;
@@ -12,6 +14,10 @@ public class Product extends BaseEntity<ProductId> {
         super.setId(productId);
         this.name = name;
         this.price = price;
+    }
+
+    public Product(ProductId productId) {
+        super.setId(productId);
     }
 
     public String getName() {
