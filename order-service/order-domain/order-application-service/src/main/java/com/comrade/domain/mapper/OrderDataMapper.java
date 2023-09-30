@@ -3,6 +3,7 @@ package com.comrade.domain.mapper;
 import com.comrade.domain.dto.create.CreateOrderCommand;
 import com.comrade.domain.dto.create.CreateOrderResponse;
 import com.comrade.domain.dto.create.OrderAddress;
+import com.comrade.domain.dto.track.TrackOrderResponse;
 import com.comrade.domain.entity.Order;
 import com.comrade.domain.entity.OrderItem;
 import com.comrade.domain.entity.Product;
@@ -55,10 +56,20 @@ public class OrderDataMapper {
                                   .collect(Collectors.toList());
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order savedOrder) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order savedOrder,String message) {
         return CreateOrderResponse.builder()
-                                  .orderTracingId(savedOrder.getTrackingId().getValue())
+                                  .orderTrackingId(savedOrder.getTrackingId().getValue())
                                   .orderStatus(savedOrder.getOrderStatus())
+                                  .message(message)
                                   .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse
+                                .builder()
+                                .orderTrackingId(order.getTrackingId().getValue())
+                                .orderStatus(order.getOrderStatus())
+                                .failureMessages(order.getFailureMessages())
+                                .build();
     }
 }

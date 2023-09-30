@@ -14,7 +14,7 @@ import java.util.UUID;
 public class CreateOrderResponse {
 
     @NotNull
-    private final UUID orderTracingId;
+    private final UUID orderTrackingId;
 
     @NotNull
     private final OrderStatus orderStatus;
