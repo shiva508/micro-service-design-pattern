@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.comrade</groupId>
-        <artifactId>micro-service-design-pattern</artifactId>
+        <artifactId>common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>common</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>common-domain</module>
-        <module>common-application</module>
-        <module>common-dataaccess</module>
-    </modules>
+    <artifactId>common-dataaccess</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
