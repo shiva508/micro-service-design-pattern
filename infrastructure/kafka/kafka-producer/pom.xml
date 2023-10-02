@@ -12,10 +12,6 @@
     <artifactId>kafka-producer</artifactId>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>com.comrade</groupId>-->
-<!--            <artifactId>outbox</artifactId>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.comrade</groupId>
             <artifactId>kafka-model</artifactId>

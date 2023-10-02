@@ -7,24 +7,25 @@ customer-service:
 spring:
   jpa:
     open-in-view: false
-    show-sql: false
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   sql:
     init:
       mode: ALWAYS
       schema-locations:
         - "classpath:init-schema.sql"
+        - "classpath:init-data.sql"
   datasource:
     url: jdbc:postgresql://localhost:5432/dear_comrade?currentSchema=customer&binaryTransfer=true&reWriteBatchedInserts=true
     username: dear
     password: comrade
     driver-class-name: org.postgresql.Driver
-    platform: postgres
-    schema: classpath:init-schema.sql
-    initialization-mode: always
+#    platform: postgres
+#    schema: classpath:init-schema.sql
+#    initialization-mode: always
 
 kafka-config:
   bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
