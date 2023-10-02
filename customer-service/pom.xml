@@ -5,43 +5,25 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.comrade</groupId>
-        <artifactId>order-service</artifactId>
+        <artifactId>micro-service-design-pattern</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>order-container</artifactId>
+    <artifactId>customer-service</artifactId>
 
-    <properties>
-
-    </properties>
     <dependencies>
-        <dependency>
-            <groupId>com.comrade</groupId>
-            <artifactId>order-domain-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.comrade</groupId>
-            <artifactId>order-application-service</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.comrade</groupId>
-            <artifactId>order-application</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.comrade</groupId>
-            <artifactId>order-messaging</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.comrade</groupId>
-            <artifactId>order-data-access</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>
@@ -51,7 +33,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>dasari508201/order.service:${project.version}</name>
+                        <name>dasari508201/customer.service:${project.version}</name>
                     </image>
                 </configuration>
                 <executions>
